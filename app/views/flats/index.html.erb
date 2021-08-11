@@ -1,0 +1,31 @@
+<h1>All our Flats (<strong><%= @flats.length %></strong>)</h1>
+
+<ul class="wrapper">
+  <% @flats.each do |flat| %>
+    <li class="grid-element">
+      <div class="card">
+        <div class="card-top">
+          <h5 class="flat-title">
+            <strong><%= flat.name %></strong>
+          </h5>
+          <h6 class="flat-address">
+            <%= flat.address %>
+          </h6>
+          <div class="flat-elements">
+            <div class="flat-number-of-people">
+              <i class="fas fa-user-friends"></i>
+              <%= flat.number_of_guests %>
+            </div>
+            <div class="flat-price">
+              <i class="fas fa-euro-sign"></i>
+              <%= flat.price_per_night %>
+            </div>
+          </div>
+        </div>
+        <div class="card-bottom">
+          <%= link_to "more info", flat_path(flat), class: "more-info" %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
